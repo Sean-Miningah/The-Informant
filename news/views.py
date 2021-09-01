@@ -9,4 +9,4 @@ def index(request):
     link = 'ok'
 
     # return HttpResponse('<h1>Page Found</h1>')
-    return render(request, 'base.html', {'title': test.id, 'link': link})
+    return render(request, 'index.html', {'title': test.id, 'link': link})
