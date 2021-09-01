@@ -78,10 +78,18 @@ class PDScrapper(Scrapper):
             except Exception as e:
                 print(e)
 
-        return (list(OrderedDict.fromkeys(story_link)), 
-            list(OrderedDict.fromkeys(story_title)), 
-            list(OrderedDict.fromkeys(story_img)), 
-            list(OrderedDict.fromkeys(story_tag)))
+        
+        res_story_titles = list(OrderedDict.fromkeys(story_title))
+
+        pd_stories = []
+        i = 0
+        for res_story_title in res_story_titles:
+            pd_story = [res_story_title, story_link[i], story_img[i], story_tag[i]]
+            pd_stories.extend([pd_story])
+            i+=1
+
+
+        return tuple(pd_stories)
 
             
 class NationScrapper(Scrapper):
@@ -111,11 +119,20 @@ class NationScrapper(Scrapper):
                     story_tag.extend([news.find('aside', class_="article-metadata").span.text])
                 except:
                     story_tag.extend(['Ochunglo'])
-        return (
-            list(OrderedDict.fromkeys(story_link)), 
-            list(OrderedDict.fromkeys(story_title)), 
-            list(OrderedDict.fromkeys(story_img)), 
-            list(OrderedDict.fromkeys(story_tag)))
+
+        
+        res_story_titles = list(OrderedDict.fromkeys(story_title))
+
+        pd_stories = []
+        i = 0
+
+        #loop return a  tuple of stories from nation stored in lists
+        for res_story_title in res_story_titles:
+            pd_story = [res_story_title, story_link[i], story_img[i], story_tag[i]]
+            pd_stories.extend([pd_story])
+            i+=1
+
+        return tuple(pd_stories)
 
         # for column in lcolumns.find_all('li', class_="col-1-1 medium-col-1-2 large-col-2-3"):
         #     if column == lcolumns.find_all('li', class_="col-1-1")[0]:
@@ -124,10 +141,6 @@ class NationScrapper(Scrapper):
         #     # print(headline_teasers[0])
         #     print(len(lcolumns.find_all('li', class_="col-1-1 medium-col-1-2")))
         #     print(column)
-
-
-# test = NationScrapper('https://nation.africa/kenya')
-# test.scrape_data()
 
 if __name__ == "__main__":
     main()
