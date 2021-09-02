@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from django.contrib import messages, auth 
+from django.contrib.auth import login 
+from django.contrib.auth.decorators import login_required
+from .models import User 
 
 # Create your views here.
 

@@ -33,6 +33,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(default=True)
     profile_image = models.ImageField(default = 'default.jpg', upload_to = 'profile_pics/% Y/% m/% d/')
     registration_date = models.DateTimeField(default=datetime.now())
+    last_login = models.DateTimeField(verbose_name="last login", auto_now=True)
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
