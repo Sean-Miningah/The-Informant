@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 
-from .models import User
+from .models import User, Comments
 
 class UserAdministrator(UserAdmin):
     list_display = (
@@ -20,4 +20,11 @@ class UserAdministrator(UserAdmin):
     fieldsets = ()
     ordering = ('email',)
 
-admin.site.register(User, UserAdministrator)
+class CommentAdmin(admin.ModelAdmin):
+    list_display = (
+        'comment_content', 'last_modified',
+    )
+    ordering = ('date_created',)
+
+admin.site.register(User,UserAdministrator)
+admin.site.register(Comments,CommentAdmin)
