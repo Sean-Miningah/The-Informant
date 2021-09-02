@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -32,15 +33,23 @@
     />
 
     <!-- Vendor CSS-->
-    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all" />
     <link
-      href="vendor/datepicker/daterangepicker.css"
+      href="{% static 'user/registration/vendor/select2/select2.min.css'%}"
+      rel="stylesheet"
+      media="all"
+    />
+    <link
+      href="{% static 'user/registration/vendor/datepicker/daterangepicker.css'%}"
       rel="stylesheet"
       media="all"
     />
 
     <!-- Main CSS-->
-    <link href="css/main.css" rel="stylesheet" media="all" />
+    <link
+      href="{% static 'user/registration/css/main.css' %}"
+      rel="stylesheet"
+      media="all"
+    />
   </head>
 
   <body>
@@ -50,23 +59,24 @@
           <div class="card-heading"></div>
           <div class="card-body">
             <h2 class="title">Registration Info</h2>
-            <form method="POST">
+            <form action="{% url 'registration' %}" method="POST">
               <div class="input-group">
                 <input
                   class="input--style-1"
                   type="text"
-                  placeholder="NAME"
-                  name="name"
+                  placeholder="EMAIL"
+                  name="email"
                 />
               </div>
               <div class="row row-space">
                 <div class="col-2">
                   <div class="input-group">
+                    <label for = "profile_pic">Profile Pic</label>
                     <input
+                        for = "profile_pic"
                       class="input--style-1 js-datepicker"
-                      type="text"
-                      placeholder="BIRTHDATE"
-                      name="birthday"
+                      type="file"
+                      name="profile_pic"
                     />
                     <i
                       class="zmdi zmdi-calendar-note input-icon js-btn-calendar"
@@ -75,43 +85,32 @@
                 </div>
                 <div class="col-2">
                   <div class="input-group">
-                    <div class="rs-select2 js-select-simple select--no-search">
-                      <select name="gender">
-                        <option disabled="disabled" selected="selected">
-                          GENDER
-                        </option>
-                        <option>Male</option>
-                        <option>Female</option>
-                        <option>Other</option>
-                      </select>
-                      <div class="select-dropdown"></div>
-                    </div>
+                    <input type="password" class="input--style-1 js-datepicker"
+                      type="password"
+                      placeholder="password"
+                      name="password">
                   </div>
-                </div>
-              </div>
-              <div class="input-group">
-                <div class="rs-select2 js-select-simple select--no-search">
-                  <select name="class">
-                    <option disabled="disabled" selected="selected">
-                      CLASS
-                    </option>
-                    <option>Class 1</option>
-                    <option>Class 2</option>
-                    <option>Class 3</option>
-                  </select>
-                  <div class="select-dropdown"></div>
                 </div>
               </div>
               <div class="row row-space">
                 <div class="col-2">
                   <div class="input-group">
                     <input
-                      class="input--style-1"
-                      type="text"
-                      placeholder="REGISTRATION CODE"
-                      name="res_code"
-                    />
+                  class="input--style-1"
+                  type="text"
+                  placeholder="FIRST NAME"
+                  name="first_name"
+                />
                   </div>
+                </div>
+                <div class="col-2">
+                  <div class="input-group">
+                    <input
+                  class="input--style-1"
+                  type="text"
+                  placeholder="LAST NAME"
+                  name="last_name"
+                />
                 </div>
               </div>
               <div class="p-t-20">
@@ -126,14 +125,14 @@
     </div>
 
     <!-- Jquery JS-->
-    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="{% static 'user/registration/vendor/jquery/jquery.min.js' %}"></script>
     <!-- Vendor JS-->
-    <script src="vendor/select2/select2.min.js"></script>
-    <script src="vendor/datepicker/moment.min.js"></script>
-    <script src="vendor/datepicker/daterangepicker.js"></script>
+    <script src="{% static 'user/registration/vendor/select2/select2.min.js' %}"></script>
+    <script src="{% static 'user/registration/vendor/datepicker/moment.min.js' %}"></script>
+    <script src="{% static 'user/registration/vendor/datepicker/daterangepicker.js' %}"></script>
 
     <!-- Main JS-->
-    <script src="js/global.js"></script>
+    <script src="{% static 'user/registration/js/global.js' %}"></script>
   </body>
   <!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>

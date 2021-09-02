@@ -5,8 +5,6 @@ from .models import Story
 
 # Create your views here.
 def index(request):
-    test = Story.objects.exclude(source="People Daily")[0]
-    link = 'ok'
 
     # return HttpResponse('<h1>Page Found</h1>')
-    return render(request, 'index.html', {'title': test.id, 'link': link})
+    return render(request, 'index.html')
