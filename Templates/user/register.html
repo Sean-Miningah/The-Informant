@@ -60,6 +60,7 @@
           <div class="card-body">
             <h2 class="title">Registration Info</h2>
             <form action="{% url 'registration' %}" method="POST">
+            {% csrf_token %}
               <div class="input-group">
                 <input
                   class="input--style-1"
@@ -78,14 +79,11 @@
                       type="file"
                       name="profile_pic"
                     />
-                    <i
-                      class="zmdi zmdi-calendar-note input-icon js-btn-calendar"
-                    ></i>
                   </div>
                 </div>
                 <div class="col-2">
                   <div class="input-group">
-                    <input type="password" class="input--style-1 js-datepicker"
+                    <input type="password" 
                       type="password"
                       placeholder="password"
                       name="password">
