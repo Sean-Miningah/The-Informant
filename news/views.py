@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseNotFound 
 from .models import Story
-from users.models import Comments
 
 
 
@@ -23,9 +22,13 @@ def index(request):
     # for story in stories:
     #     print(story)
     # return HttpResponse('<h1>Page Found</h1>')
+<<<<<<< HEAD
     return render(request, 'index.html', context)
 
 
 def comments(request):
 
     return render(request, "comments.html")
+=======
+    return render(request, 'index.html')
+>>>>>>> parent of dd2df6f... comments model registered in dashboard
