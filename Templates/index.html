@@ -1,31 +1,40 @@
 {% extends "base.html" %} {% load static%} {% block main %}
 <div id="main">
-  <div id="content">
-    <div class="box">
+  <div
+    id="content"
+    style="display: grid; grid-template-rows: 250px 250px 250px"
+  >
+    <div
+      class="box"
+      style="grid-row: 1/1; display: grid; grid-template-rows: 1fr 4fr"
+    >
       <!-- Template for the article  -->
-      <h2><span>NATION NEWS</span></h2>
-      <a href="#" class="see-all">See all articles in this category</a>
-      <div class="cl">&nbsp;</div>
-      <div class="posts">
+      <h2 style="grid-row: 1/1"><span>NATION NEWS</span></h2>
+      <div
+        class="posts"
+        style="
+          grid-row: 2/2;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 1fr 1fr;
+        "
+      >
+        {% if nation_stories %} {% for nation_story in nation_stories %}
         <div class="post">
           <div class="image">
-            <a href="#"
-              ><img src="{% static 'css/images/post-1.jpg' %}" alt=""
-            /></a>
+            <a href="#"><img src="{{ nation_story.img_url }}" alt="" /></a>
           </div>
           <div class="data">
             <h4>
-              <a href="#"
-                >Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a
-              >
+              <a href="#">{{ nation_story.Title }}</a>
             </h4>
-            <p>
-              Maecenas sodales auctor urna cursus facilisis. Cras rutrum justo
-              id mi bibendum luctus.
-            </p>
+            <p>{{ nation_story.Datetime }}</p>
           </div>
         </div>
-        <div class="post last">
+        {% endfor %} {% else %}
+        <p>{{nation_stories}}</p>
+        {% endif %}
+        <div class="post">
           <div class="image">
             <a href="#"
               ><img src="{% static 'css/images/post-2.jpg' %}" alt=""
@@ -39,7 +48,6 @@
             </p>
           </div>
         </div>
-        <div class="cl">&nbsp;</div>
         <div class="post">
           <div class="image">
             <a href="#"
@@ -68,14 +76,22 @@
             </p>
           </div>
         </div>
-        <div class="cl">&nbsp;</div>
       </div>
     </div>
-    <div class="box">
-      <h2><span>PEOPLE DAILY</span></h2>
-      <a href="#" class="see-all">See all articles in this category</a>
-      <div class="cl">&nbsp;</div>
-      <div class="posts">
+    <div
+      class="box"
+      style="grid-row: 2/2; display: grid; grid-template-rows: 1fr 4fr"
+    >
+      <h2 style="grid-row: 1/1"><span>PEOPLE DAILY</span></h2>
+      <div
+        class="posts"
+        style="
+          grid-row: 2/2;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 1fr 1fr;
+        "
+      >
         <div class="post">
           <div class="image">
             <a href="#"
@@ -94,7 +110,7 @@
             </p>
           </div>
         </div>
-        <div class="post last">
+        <div class="post">
           <div class="image">
             <a href="#"
               ><img src="{% static 'css/images/post-6.jpg' %}" alt=""
@@ -108,7 +124,6 @@
             </p>
           </div>
         </div>
-        <div class="cl">&nbsp;</div>
         <div class="post">
           <div class="image">
             <a href="#"
@@ -123,7 +138,7 @@
             </p>
           </div>
         </div>
-        <div class="post last">
+        <div class="post">
           <div class="image">
             <a href="#"
               ><img src="{% static 'css/images/post-1.jpg' %}" alt=""
@@ -137,14 +152,22 @@
             </p>
           </div>
         </div>
-        <div class="cl">&nbsp;</div>
       </div>
     </div>
-    <div class="box last">
-      <h2><span>THE STAR</span></h2>
-      <a href="#" class="see-all">See all articles in this category</a>
-      <div class="cl">&nbsp;</div>
-      <div class="posts">
+    <div
+      class="box"
+      style="grid-row: 3/3; display: grid; grid-template-rows: 1fr 4fr"
+    >
+      <h2 style="grid-row: 1/1"><span>THE STAR</span></h2>
+      <div
+        class="posts"
+        style="
+          grid-row: 2/2;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 1fr 1fr;
+        "
+      >
         <div class="post">
           <div class="image">
             <a href="#"
@@ -163,7 +186,7 @@
             </p>
           </div>
         </div>
-        <div class="post last">
+        <div class="post">
           <div class="image">
             <a href="#"
               ><img src="{% static 'css/images/post-8.jpg' %}" alt=""
@@ -177,7 +200,6 @@
             </p>
           </div>
         </div>
-        <div class="cl">&nbsp;</div>
         <div class="post">
           <div class="image">
             <a href="#"
@@ -192,7 +214,7 @@
             </p>
           </div>
         </div>
-        <div class="post last">
+        <div class="post">
           <div class="image">
             <a href="#"
               ><img src="{% static 'css/images/post-10.jpg' %}" alt=""
@@ -206,12 +228,10 @@
             </p>
           </div>
         </div>
-        <div class="cl">&nbsp;</div>
       </div>
     </div>
-    <div class="cl">&nbsp;</div>
   </div>
-  <div id="sidebar">
+  <div id="sidebar" style="float: right">
     <!-- template for the categoris(tags, archives, etc) -->
     <div class="nav-box">
       <h2><span>CATEGORIES</span></h2>
