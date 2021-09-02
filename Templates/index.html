@@ -1,160 +1,263 @@
-{% extends "base.html" %}
-{% load static%}
-
-
-{% block main %}
-  <div id="main">
-    <div id="content">
-      <div class="box">
-        <h2><span>CATEGORY ONE</span></h2>
-        <a href="#" class="see-all">See all articles in this category</a>
-        <div class="cl">&nbsp;</div>
-        <div class="posts">
-          <div class="post">
-            <div class="image"> <a href="#"><img src="{% static 'css/images/post-1.jpg' %}" alt="" /></a> </div>
-            <div class="data">
-              <h4><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h4>
-              <p>Maecenas sodales auctor urna cursus facilisis. Cras rutrum justo id mi bibendum luctus. </p>
-            </div>
-          </div>
-          <div class="post last">
-            <div class="image"> <a href="#"><img src="{% static 'css/images/post-2.jpg' %}" alt="" /></a> </div>
-            <div class="data">
-              <h4><a href="#">Maecenas scelerisque sapien </a></h4>
-              <p>Maecenas sodales auctor urna cursus facilisis. Cras rutrum justo id mi bibendum luctus. </p>
-            </div>
-          </div>
-          <div class="cl">&nbsp;</div>
-          <div class="post">
-            <div class="image"> <a href="#"><img src="{% static 'css/images/post-3.jpg' %}" alt="" /></a> </div>
-            <div class="data">
-              <h4><a href="#">Cras ac ultrices ipsum. </a></h4>
-              <p>Vivamus adipiscing dui at turpis imperdiet congue. Fusce posuere augue et odio bibendum non dictum nisi posuere. </p>
-            </div>
-          </div>
-          <div class="post last">
-            <div class="image"> <a href="#"><img src="{% static 'css/images/post-4.jpg' %}" alt="" /></a> </div>
-            <div class="data">
-              <h4><a href="#">Nunc ac lorem id ipsum.</a></h4>
-              <p>Maecenas sodales auctor urna cursus facilisis. Cras rutrum justo id mi bibendum luctus. </p>
-            </div>
-          </div>
-          <div class="cl">&nbsp;</div>
-        </div>
-      </div>
-      <div class="box">
-        <h2><span>CATEGORY TWO</span></h2>
-        <a href="#" class="see-all">See all articles in this category</a>
-        <div class="cl">&nbsp;</div>
-        <div class="posts">
-          <div class="post">
-            <div class="image"> <a href="#"><img src="{% static 'css/images/post-5.jpg' %}" alt="" /></a> </div>
-            <div class="data">
-              <h4><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h4>
-              <p>Maecenas sodales auctor urna cursus facilisis. Cras rutrum justo id mi bibendum luctus. </p>
-            </div>
-          </div>
-          <div class="post last">
-            <div class="image"> <a href="#"><img src="{% static 'css/images/post-6.jpg' %}" alt="" /></a> </div>
-            <div class="data">
-              <h4><a href="#">Maecenas scelerisque sapien </a></h4>
-              <p>Maecenas sodales auctor urna cursus facilisis. Cras rutrum justo id mi bibendum luctus. </p>
-            </div>
-          </div>
-          <div class="cl">&nbsp;</div>
-          <div class="post">
-            <div class="image"> <a href="#"><img src="{% static 'css/images/post-1.jpg' %}" alt="" /></a> </div>
-            <div class="data">
-              <h4><a href="#">Cras ac ultrices ipsum. </a></h4>
-              <p>Vivamus adipiscing dui at turpis imperdiet congue. Fusce posuere augue et odio bibendum non dictum nisi posuere. </p>
-            </div>
-          </div>
-          <div class="post last">
-            <div class="image"> <a href="#"><img src="{% static 'css/images/post-1.jpg' %}" alt="" /></a> </div>
-            <div class="data">
-              <h4><a href="#">Nunc ac lorem id ipsum.</a></h4>
-              <p>Maecenas sodales auctor urna cursus facilisis. Cras rutrum justo id mi bibendum luctus. </p>
-            </div>
-          </div>
-          <div class="cl">&nbsp;</div>
-        </div>
-      </div>
-      <div class="box last">
-        <h2><span>CATEGORY THREE</span></h2>
-        <a href="#" class="see-all">See all articles in this category</a>
-        <div class="cl">&nbsp;</div>
-        <div class="posts">
-          <div class="post">
-            <div class="image"> <a href="#"><img src="{% static 'css/images/post-7.jpg' %}" alt="" /></a> </div>
-            <div class="data">
-              <h4><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h4>
-              <p>Maecenas sodales auctor urna cursus facilisis. Cras rutrum justo id mi bibendum luctus. </p>
-            </div>
-          </div>
-          <div class="post last">
-            <div class="image"> <a href="#"><img src="{% static 'css/images/post-8.jpg' %}" alt="" /></a> </div>
-            <div class="data">
-              <h4><a href="#">Maecenas scelerisque sapien </a></h4>
-              <p>Maecenas sodales auctor urna cursus facilisis. Cras rutrum justo id mi bibendum luctus. </p>
-            </div>
-          </div>
-          <div class="cl">&nbsp;</div>
-          <div class="post">
-            <div class="image"> <a href="#"><img src="{% static 'css/images/post-9.jpg' %}" alt="" /></a> </div>
-            <div class="data">
-              <h4><a href="#">Cras ac ultrices ipsum. </a></h4>
-              <p>Vivamus adipiscing dui at turpis imperdiet congue. Fusce posuere augue et odio bibendum non dictum nisi posuere. </p>
-            </div>
-          </div>
-          <div class="post last">
-            <div class="image"> <a href="#"><img src="{% static 'css/images/post-10.jpg' %}" alt="" /></a> </div>
-            <div class="data">
-              <h4><a href="#">Nunc ac lorem id ipsum.</a></h4>
-              <p>Maecenas sodales auctor urna cursus facilisis. Cras rutrum justo id mi bibendum luctus. </p>
-            </div>
-          </div>
-          <div class="cl">&nbsp;</div>
-        </div>
-      </div>
+{% extends "base.html" %} {% load static%} {% block main %}
+<div id="main">
+  <div id="content">
+    <div class="box">
+      <!-- Template for the article  -->
+      <h2><span>NATION NEWS</span></h2>
+      <a href="#" class="see-all">See all articles in this category</a>
       <div class="cl">&nbsp;</div>
+      <div class="posts">
+        <div class="post">
+          <div class="image">
+            <a href="#"
+              ><img src="{% static 'css/images/post-1.jpg' %}" alt=""
+            /></a>
+          </div>
+          <div class="data">
+            <h4>
+              <a href="#"
+                >Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a
+              >
+            </h4>
+            <p>
+              Maecenas sodales auctor urna cursus facilisis. Cras rutrum justo
+              id mi bibendum luctus.
+            </p>
+          </div>
+        </div>
+        <div class="post last">
+          <div class="image">
+            <a href="#"
+              ><img src="{% static 'css/images/post-2.jpg' %}" alt=""
+            /></a>
+          </div>
+          <div class="data">
+            <h4><a href="#">Maecenas scelerisque sapien </a></h4>
+            <p>
+              Maecenas sodales auctor urna cursus facilisis. Cras rutrum justo
+              id mi bibendum luctus.
+            </p>
+          </div>
+        </div>
+        <div class="cl">&nbsp;</div>
+        <div class="post">
+          <div class="image">
+            <a href="#"
+              ><img src="{% static 'css/images/post-3.jpg' %}" alt=""
+            /></a>
+          </div>
+          <div class="data">
+            <h4><a href="#">Cras ac ultrices ipsum. </a></h4>
+            <p>
+              Vivamus adipiscing dui at turpis imperdiet congue. Fusce posuere
+              augue et odio bibendum non dictum nisi posuere.
+            </p>
+          </div>
+        </div>
+        <div class="post last">
+          <div class="image">
+            <a href="#"
+              ><img src="{% static 'css/images/post-4.jpg' %}" alt=""
+            /></a>
+          </div>
+          <div class="data">
+            <h4><a href="#">Nunc ac lorem id ipsum.</a></h4>
+            <p>
+              Maecenas sodales auctor urna cursus facilisis. Cras rutrum justo
+              id mi bibendum luctus.
+            </p>
+          </div>
+        </div>
+        <div class="cl">&nbsp;</div>
+      </div>
     </div>
-    <div id="sidebar">
-      <div class="nav-box">
-        <h2><span>CATEGORIES</span></h2>
-        <ul>
-          <li><a href="#">Cras nec lorem lecturs</a></li>
-          <li><a href="#">Nunc pell entesq</a></li>
-          <li><a href="#">Lorem ipsum dolor</a></li>
-          <li><a href="#">Amet sit laoreet</a></li>
-          <li><a href="#">Lectus sit amet</a></li>
-          <li><a href="#">Pellenstesuq nunc lorem</a></li>
-        </ul>
-      </div>
-      <div class="nav-box">
-        <h2><span>ARCHIVES</span></h2>
-        <ul>
-          <li><a href="#">August 2009</a></li>
-          <li><a href="#">July 2009</a></li>
-          <li><a href="#">June 2009</a></li>
-          <li><a href="#">May 2009</a></li>
-        </ul>
-      </div>
-      <div class="nav-box">
-        <h2><span>TAGS</span></h2>
-        <ul>
-          <li><a href="#">Pellenstesque</a></li>
-          <li><a href="#">Nunc lorem</a></li>
-          <li><a href="#">Lectus sit</a></li>
-          <li><a href="#">Sit laoreet</a></li>
-          <li><a href="#">Sit amet</a></li>
-          <li><a href="#">Laoreet lectus nunc</a></li>
-        </ul>
+    <div class="box">
+      <h2><span>PEOPLE DAILY</span></h2>
+      <a href="#" class="see-all">See all articles in this category</a>
+      <div class="cl">&nbsp;</div>
+      <div class="posts">
+        <div class="post">
+          <div class="image">
+            <a href="#"
+              ><img src="{% static 'css/images/post-5.jpg' %}" alt=""
+            /></a>
+          </div>
+          <div class="data">
+            <h4>
+              <a href="#"
+                >Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a
+              >
+            </h4>
+            <p>
+              Maecenas sodales auctor urna cursus facilisis. Cras rutrum justo
+              id mi bibendum luctus.
+            </p>
+          </div>
+        </div>
+        <div class="post last">
+          <div class="image">
+            <a href="#"
+              ><img src="{% static 'css/images/post-6.jpg' %}" alt=""
+            /></a>
+          </div>
+          <div class="data">
+            <h4><a href="#">Maecenas scelerisque sapien </a></h4>
+            <p>
+              Maecenas sodales auctor urna cursus facilisis. Cras rutrum justo
+              id mi bibendum luctus.
+            </p>
+          </div>
+        </div>
+        <div class="cl">&nbsp;</div>
+        <div class="post">
+          <div class="image">
+            <a href="#"
+              ><img src="{% static 'css/images/post-1.jpg' %}" alt=""
+            /></a>
+          </div>
+          <div class="data">
+            <h4><a href="#">Cras ac ultrices ipsum. </a></h4>
+            <p>
+              Vivamus adipiscing dui at turpis imperdiet congue. Fusce posuere
+              augue et odio bibendum non dictum nisi posuere.
+            </p>
+          </div>
+        </div>
+        <div class="post last">
+          <div class="image">
+            <a href="#"
+              ><img src="{% static 'css/images/post-1.jpg' %}" alt=""
+            /></a>
+          </div>
+          <div class="data">
+            <h4><a href="#">Nunc ac lorem id ipsum.</a></h4>
+            <p>
+              Maecenas sodales auctor urna cursus facilisis. Cras rutrum justo
+              id mi bibendum luctus.
+            </p>
+          </div>
+        </div>
+        <div class="cl">&nbsp;</div>
       </div>
     </div>
-    <div id="banners">
-      <div class="banner"> <a href="#"><img src="{% static 'css/images/small-banner.gif' %}" alt="" /></a> </div>
-      <div class="banner"> <a href="#"><img src="{% static 'css/images/big-banner.gif' %}" alt="" /></a> </div>
+    <div class="box last">
+      <h2><span>THE STAR</span></h2>
+      <a href="#" class="see-all">See all articles in this category</a>
+      <div class="cl">&nbsp;</div>
+      <div class="posts">
+        <div class="post">
+          <div class="image">
+            <a href="#"
+              ><img src="{% static 'css/images/post-7.jpg' %}" alt=""
+            /></a>
+          </div>
+          <div class="data">
+            <h4>
+              <a href="#"
+                >Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a
+              >
+            </h4>
+            <p>
+              Maecenas sodales auctor urna cursus facilisis. Cras rutrum justo
+              id mi bibendum luctus.
+            </p>
+          </div>
+        </div>
+        <div class="post last">
+          <div class="image">
+            <a href="#"
+              ><img src="{% static 'css/images/post-8.jpg' %}" alt=""
+            /></a>
+          </div>
+          <div class="data">
+            <h4><a href="#">Maecenas scelerisque sapien </a></h4>
+            <p>
+              Maecenas sodales auctor urna cursus facilisis. Cras rutrum justo
+              id mi bibendum luctus.
+            </p>
+          </div>
+        </div>
+        <div class="cl">&nbsp;</div>
+        <div class="post">
+          <div class="image">
+            <a href="#"
+              ><img src="{% static 'css/images/post-9.jpg' %}" alt=""
+            /></a>
+          </div>
+          <div class="data">
+            <h4><a href="#">Cras ac ultrices ipsum. </a></h4>
+            <p>
+              Vivamus adipiscing dui at turpis imperdiet congue. Fusce posuere
+              augue et odio bibendum non dictum nisi posuere.
+            </p>
+          </div>
+        </div>
+        <div class="post last">
+          <div class="image">
+            <a href="#"
+              ><img src="{% static 'css/images/post-10.jpg' %}" alt=""
+            /></a>
+          </div>
+          <div class="data">
+            <h4><a href="#">Nunc ac lorem id ipsum.</a></h4>
+            <p>
+              Maecenas sodales auctor urna cursus facilisis. Cras rutrum justo
+              id mi bibendum luctus.
+            </p>
+          </div>
+        </div>
+        <div class="cl">&nbsp;</div>
+      </div>
     </div>
     <div class="cl">&nbsp;</div>
   </div>
+  <div id="sidebar">
+    <!-- template for the categoris(tags, archives, etc) -->
+    <div class="nav-box">
+      <h2><span>CATEGORIES</span></h2>
+      <ul>
+        <li><a href="#">Cras nec lorem lecturs</a></li>
+        <li><a href="#">Nunc pell entesq</a></li>
+        <li><a href="#">Lorem ipsum dolor</a></li>
+        <li><a href="#">Amet sit laoreet</a></li>
+        <li><a href="#">Lectus sit amet</a></li>
+        <li><a href="#">Pellenstesuq nunc lorem</a></li>
+      </ul>
+    </div>
+    <!-- ends here -->
+    <div class="nav-box">
+      <h2><span>ARCHIVES</span></h2>
+      <ul>
+        <li><a href="#">August 2009</a></li>
+        <li><a href="#">July 2009</a></li>
+        <li><a href="#">June 2009</a></li>
+        <li><a href="#">May 2009</a></li>
+      </ul>
+    </div>
+    <div class="nav-box">
+      <h2><span>TAGS</span></h2>
+      <ul>
+        <li><a href="#">Pellenstesque</a></li>
+        <li><a href="#">Nunc lorem</a></li>
+        <li><a href="#">Lectus sit</a></li>
+        <li><a href="#">Sit laoreet</a></li>
+        <li><a href="#">Sit amet</a></li>
+        <li><a href="#">Laoreet lectus nunc</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- <div id="banners">
+    <div class="banner">
+      <a href="#"
+        ><img src="{% static 'css/images/small-banner.gif' %}" alt=""
+      /></a>
+    </div>
+    <div class="banner">
+      <a href="#"
+        ><img src="{% static 'css/images/big-banner.gif' %}" alt=""
+      /></a>
+    </div>
+  </div> -->
+  <div class="cl">&nbsp;</div>
+</div>
 {% endblock %}

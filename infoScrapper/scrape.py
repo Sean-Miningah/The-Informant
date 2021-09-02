@@ -30,6 +30,19 @@ class Scrapper:
         self.source = requests.get(url, headers = self.header).text
         self.soup = BeautifulSoup(self.source, 'lxml')
 
+    #unpacking the scraped news
+    #perfome below actions were inherited
+    # res_story_titles = list(OrderedDict.fromkeys(story_title))
+
+    #     pd_stories = []
+    #     i = 0
+    #     for res_story_title in res_story_titles:
+    #         pd_story = [res_story_title, story_link[i], story_img[i], story_tag[i]]
+    #         pd_stories.extend([pd_story])
+    #         i+=1
+    def news_unpack(self):
+        pass
+
 class PDScrapper(Scrapper):
     def __init__(self, url, content=None):
         super().__init__(url, content)
@@ -141,6 +154,14 @@ class NationScrapper(Scrapper):
         #     # print(headline_teasers[0])
         #     print(len(lcolumns.find_all('li', class_="col-1-1 medium-col-1-2")))
         #     print(column)
+
+class StandardScrapper(Scrapper):
+    pass
+
+class TheStarScrapper(Scrapper):
+    pass
+    
+
 
 if __name__ == "__main__":
     main()
