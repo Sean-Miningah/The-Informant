@@ -38,5 +38,29 @@ def comments(request):
     context = {
         'all_comments' : all_comments
     }
-
     return render(request, "comments.html", context)
+
+def write_comment(request):
+    all_comments = Comments.objects.order_by('-date_created')
+    user_id = request.user.id
+    user_comments = Comments.objects.filter(user_id=user_id).order_by('-date_created')
+    user = User.objects.get(id=user_id)
+
+    if request.method == "POST":
+        if request.user.is_authenticated:
+           comment_section = request.POST['comment_section']
+           new_comment = Comments.objects.create(
+              comment_content = comment_section,
+              user_id = request.user 
+           )
+           return redirect('comments_page')
+        else:
+            redirect('login')
+    elif request.method == "GET":
+
+        context = {
+            'all_comments' : all_comments,
+            'user' : user,
+            'user_comments' : user_comments
+        }
+        return render(request, 'add_comment.html', context)
