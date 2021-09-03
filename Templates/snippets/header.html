@@ -2,18 +2,11 @@
   <h1 style="font-size: 50px; padding-top: 20px">THE INFORMANT</h1>
   <div class="top-bar">
     <div class="links">
-      <a href="#">SIGN IN</a> <a href="#">SIGN UP</a>
-      <a href="#">LOG OUT</a>
+      <a href="{% url 'login' %}">LOGIN</a>
+      <a href="{% url 'registration' %}">SIGN UP</a>
+      <a href="{% url 'logout' %}">LOG OUT</a>
     </div>
     <div class="cl">&nbsp;</div>
-    <div id="search">
-      <form action="#" method="post">
-        <label for="search-string">SEARCH HERE ...</label>
-        <div class="fields">
-          <input type="text" value="..." id="search-string" class="field" />
-          <input type="submit" value="" class="submit" />
-        </div>
-      </form>
     </div>
   </div>
 </div>

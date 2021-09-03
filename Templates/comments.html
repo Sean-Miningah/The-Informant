@@ -1,9 +1,24 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Snippet - BBBootstrap</title>
+    <link
+      rel="stylesheet"
+      href="{% static 'css/style.css' %}"
+      type="text/css"
+      media="all"
+    />
+    <script
+      type="text/javascript"
+      src="{% static 'js/jquery-1.4.2.min.js' %}"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{% static 'js/jquery-func.js' %}"
+    ></script>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -37,167 +52,45 @@
     </style>
   </head>
   <body oncontextmenu="return false" class="snippet-body">
-    <div class="container mt-3 d-flex justify-content-center">
+    {% include 'snippets/header.html' %} {% include 'snippets/navigation.html'%}
+    <div
+      class="container mt-3 d-flex justify-content-center"
+      style="display: grid; grid-template-rows: 5fr 1fr"
+    >
       <div class="row d-flex justify-content-center">
         <div class="col-md-8">
           <div class="text-left">
             <h6>All comment</h6>
           </div>
+          {% for comment in all_comments %}
           <div class="card p-3 mb-2">
             <div class="d-flex flex-row">
               <img
-                src="https://i.imgur.com/dwiGgJr.jpg"
+                src="data:image/jpeg;base64,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"
                 height="40"
                 width="40"
                 class="rounded-circle"
               />
               <div class="d-flex flex-column ms-2">
-                <h6 class="mb-1 text-primary">Emma</h6>
-                <p class="comment-text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  lectus nibh, efficitur in bibendum id, pellentesque quis nibh.
-                  Ut dictum facilisis dui, non faucibus dolor sit amet lorem
-                  auctor vitae. Class aptent taciti sociosqu ad litora torquent
-                  per conubia nostra, per inceptos himenaeos. Quisque risus
-                  mauris
-                </p>
+                <h6 class="mb-1 text-primary">
+                  {{ comment.user.firstname }} {{ comment.user.lastname }}
+                </h6>
+                <p class="comment-text">{{ comment.comment_content }}</p>
               </div>
             </div>
             <div class="d-flex justify-content-between">
-              <div class="d-flex flex-row gap-3 align-items-center">
-                <div class="d-flex align-items-center">
-                  <i class="fa fa-heart-o"></i>
-                  <span class="ms-1 fs-10">Like</span>
-                </div>
-                <div class="d-flex align-items-center">
-                  <i class="fa fa-comment-o"></i>
-                  <span class="ms-1 fs-10">Comments</span>
-                </div>
-              </div>
               <div class="d-flex flex-row">
                 <span class="text-muted fw-normal fs-10"
-                  >May 22,2020 12:10 PM</span
+                  >{{ comment.date_created }}</span
                 >
               </div>
             </div>
           </div>
-          <div class="card p-3 mb-2">
-            <div class="d-flex flex-row">
-              <img
-                src="https://i.imgur.com/hczKIze.jpg"
-                height="40"
-                width="40"
-                class="rounded-circle"
-              />
-              <div class="d-flex flex-column ms-2">
-                <h6 class="mb-1 text-primary">Morne Micheal</h6>
-                <p class="comment-text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  lectus nibh, efficitur in bibendum id, pellentesque quis nibh.
-                  Ut dictum facilisis dui, non faucibus dolor sit amet lorem
-                  auctor vitae. Class aptent taciti sociosqu ad litora torquent
-                  per conubia nostra, per inceptos himenaeos. Quisque risus
-                  mauris
-                </p>
-              </div>
-            </div>
-            <div class="d-flex justify-content-between">
-              <div class="d-flex flex-row gap-3 align-items-center">
-                <div class="d-flex align-items-center">
-                  <i class="fa fa-heart-o"></i>
-                  <span class="ms-1 fs-10">Like</span>
-                </div>
-                <div class="d-flex align-items-center">
-                  <i class="fa fa-comment-o"></i>
-                  <span class="ms-1 fs-10">Comments</span>
-                </div>
-              </div>
-              <div class="d-flex flex-row">
-                <span class="text-muted fw-normal fs-10"
-                  >May 21,2020 1:10 PM</span
-                >
-              </div>
-            </div>
-          </div>
-          <div class="card p-3 mb-2">
-            <div class="d-flex flex-row">
-              <img
-                src="https://i.imgur.com/C4egmYM.jpg"
-                height="40"
-                width="40"
-                class="rounded-circle"
-              />
-              <div class="d-flex flex-column ms-2">
-                <h6 class="mb-1 text-primary">Tommy Hifig</h6>
-                <p class="comment-text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  lectus nibh, efficitur in bibendum id, pellentesque quis nibh.
-                  Ut dictum facilisis dui, non faucibus dolor sit amet lorem
-                  auctor vitae. Class aptent taciti sociosqu ad litora torquent
-                  per conubia nostra, per inceptos himenaeos. Quisque risus
-                  mauris
-                </p>
-              </div>
-            </div>
-            <div class="d-flex justify-content-between">
-              <div class="d-flex flex-row gap-3 align-items-center">
-                <div class="d-flex align-items-center">
-                  <i class="fa fa-heart-o"></i>
-                  <span class="ms-1 fs-10">Like</span>
-                </div>
-                <div class="d-flex align-items-center">
-                  <i class="fa fa-comment-o"></i>
-                  <span class="ms-1 fs-10">Comments</span>
-                </div>
-              </div>
-              <div class="d-flex flex-row">
-                <span class="text-muted fw-normal fs-10"
-                  >May 12,2020 12:10 PM</span
-                >
-              </div>
-            </div>
-          </div>
-          <div class="card p-3 mb-2">
-            <div class="d-flex flex-row">
-              <img
-                src="https://i.imgur.com/dwiGgJr.jpg"
-                height="40"
-                width="40"
-                class="rounded-circle"
-              />
-              <div class="d-flex flex-column ms-2">
-                <h6 class="mb-1 text-primary">Emma</h6>
-                <p class="comment-text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  lectus nibh, efficitur in bibendum id, pellentesque quis nibh.
-                  Ut dictum facilisis dui, non faucibus dolor sit amet lorem
-                  auctor vitae. Class aptent taciti sociosqu ad litora torquent
-                  per conubia nostra, per inceptos himenaeos. Quisque risus
-                  mauris
-                </p>
-              </div>
-            </div>
-            <div class="d-flex justify-content-between">
-              <div class="d-flex flex-row gap-3 align-items-center">
-                <div class="d-flex align-items-center">
-                  <i class="fa fa-heart-o"></i>
-                  <span class="ms-1 fs-10">Like</span>
-                </div>
-                <div class="d-flex align-items-center">
-                  <i class="fa fa-comment-o"></i>
-                  <span class="ms-1 fs-10">Comments</span>
-                </div>
-              </div>
-              <div class="d-flex flex-row">
-                <span class="text-muted fw-normal fs-10"
-                  >May 22,2020 12:10 PM</span
-                >
-              </div>
-            </div>
-          </div>
+          {% endfor %}
         </div>
       </div>
     </div>
+    {% include 'snippets/footer.html' %}
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"

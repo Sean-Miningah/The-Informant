@@ -22,13 +22,13 @@
         {% for pd_story in pd_stories %}
         <div class="post">
           <div class="image" style="max-width: 50px">
-            <a href="#"
+            <a href="{{ pd_story.source_url }}"
               ><img style="width: 80px" src="{{pd_story.img_url}}" alt=""
             /></a>
           </div>
           <div style="right: 1px" class="data">
             <h4>
-              <a href="#">{{pd_story.Title}}</a>
+              <a href="{{ pd_story.source_url }}">{{pd_story.Title}}</a>
             </h4>
             <p>{{pd_story.Datetime}}</p>
           </div>
@@ -53,13 +53,13 @@
         {% for nation_story in nation_stories %}
         <div class="post">
           <div class="image">
-            <a href="#"
+            <a href="{{ pd_story.source_url }}"
               ><img style="width: 80px" src="{{nation_story.img_url}}" alt=""
             /></a>
           </div>
           <div class="data">
             <h4>
-              <a href="#">{{nation_story.Title}}</a>
+              <a href="{{ pd_story.source_url }}">{{nation_story.Title}}</a>
             </h4>
             <p>{{nation_story.Datetime}}</p>
           </div>

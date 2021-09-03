@@ -29,10 +29,14 @@ def index(request):
         'latest_news' : latest_news
     }
 
-    print(latest_news)
     return render(request, 'index.html', context)
 
 
 def comments(request):
+    all_comments = Comments.objects.order_by('-date_created')[:8]
 
-    return render(request, "comments.html")
+    context = {
+        'all_comments' : all_comments
+    }
+
+    return render(request, "comments.html", context)

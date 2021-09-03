@@ -10,17 +10,18 @@
             {% for latest_story in latest_news %}
             <li>
               <div class="image">
-                <a href="#"
-                  ><img src="{% static 'css/images/popular-1.jpg'%}" alt=""
+                <a href="{{ latest_story.source_url }}"
+                  ><img
+                    style="width: 100px"
+                    src="{{ latest_story.img_url }}"
+                    alt=""
                 /></a>
               </div>
               <div class="data">
-                <h5><a href="#">Cras nec lorem lectus</a></h5>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-                  nec lorem lectus, ut lacinia turpis. Nunc pellentesque
-                  pellentesque laoreet. Lorem ipsum dolor sit amet, consectetur
-                </p>
+                <h5>{{ latest_story.Datetime }}</h5>
+                <a href="{{ latest_story.source_url }}"
+                  ><p>{{ latest_story.Title }}</p></a
+                >
               </div>
               <div class="cl">&nbsp;</div>
             </li>
@@ -36,10 +37,10 @@
             <li>
               <h6>
                 {{ latest_comment.date_created }} by
-                <a href="#"
-                  >{{ latest_comment.user_id.first_name }}
-                  {{latest_comment.user_id.last_name}}</a
-                >
+                <h5>
+                  {{ latest_comment.user_id.first_name }}
+                  {{latest_comment.user_id.last_name}}
+                </h5>
               </h6>
               <p>{{ latest_comment.comment_content }}</p>
             </li>
