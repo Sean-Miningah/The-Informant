@@ -1,29 +1,39 @@
-{% load static %} 
-<!doctype html>
- <html>
-    <head>
-        <title>MEGAZZINE</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all" />
-        <script type="text/javascript" src="{% static 'js/jquery-1.4.2.min.js' %}"></script>
-        <script type="text/javascript" src="{% static 'js/jquery-func.js' %}"></script>
-    </head>
-    <body>
-        <div id="shell">
-            <!-- header section -->
-            {% include 'snippets/header.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The INFORMANT</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link
+      rel="stylesheet"
+      href="{% static 'css/style.css' %}"
+      type="text/css"
+      media="all"
+    />
+    <script
+      type="text/javascript"
+      src="{% static 'js/jquery-1.4.2.min.js' %}"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{% static 'js/jquery-func.js' %}"
+    ></script>
+  </head>
+  <body>
+    <div id="shell">
+      <!-- header section -->
+      {% include 'snippets/header.html' %}
 
-            <!-- navigation content -->
-            {% include 'snippets/navigation.html' %}
+      <!-- navigation content -->
+      {% include 'snippets/navigation.html' %}
 
-            <!-- main content -->
-            {% block main %}
-            {% endblock %}
-            
-            <!-- bootom content -->
-            {% include 'snippets/bottom.html' %}
-            <!-- footer -->
-            {% include 'snippets/footer.html' %}
-        </div>
-    </body>
- </html>
+      <!-- main content -->
+      {% block main %} {% endblock %}
+
+      <!-- bootom content -->
+      {% include 'snippets/bottom.html' %}
+      <!-- footer -->
+      {% include 'snippets/footer.html' %}
+    </div>
+  </body>
+</html>

@@ -37,7 +37,7 @@ def login(request):
 
         if user is not None:
             auth.login(request, user)
-            return render(request,"index.html")
+            return redirect('top_page')
         else:
             return redirect('login')
     else:

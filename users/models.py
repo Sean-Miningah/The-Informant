@@ -42,3 +42,8 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.email
+
+class Comments(models.Model):
+    date_created = models.DateTimeField(default=datetime.now())
+    comment_content = models.CharField(max_length = 400)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
