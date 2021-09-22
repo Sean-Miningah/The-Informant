@@ -43,24 +43,46 @@ def comments(request):
 def write_comment(request):
     all_comments = Comments.objects.order_by('-date_created')
     user_id = request.user.id
-    user_comments = Comments.objects.filter(user_id=user_id).order_by('-date_created')
-    user = User.objects.get(id=user_id)
+    if user_id == None:
+        return redirect('top_page')
+    else:
+        user_comments = Comments.objects.filter(user_id=user_id).order_by('-date_created')
+        user = User.objects.get(id=user_id)
 
+        if request.method == "POST":
+            if request.user.is_authenticated:
+                comment_section = request.POST['comment_section']
+                new_comment = Comments.objects.create(
+                    comment_content = comment_section,
+                    user_id = request.user 
+                )
+                return redirect('comments_page')
+            else:
+                redirect('login')
+        elif request.method == "GET":
+
+            context = {
+                'all_comments' : all_comments,
+                'user' : user,
+                'user_comments' : user_comments
+            }
+            return render(request, 'add_comment.html', context)
+
+def dashboard(request):
+    tags = Story.objects.values_list('category').distinct()
     if request.method == "POST":
-        if request.user.is_authenticated:
-           comment_section = request.POST['comment_section']
-           new_comment = Comments.objects.create(
-              comment_content = comment_section,
-              user_id = request.user 
-           )
-           return redirect('comments_page')
-        else:
-            redirect('login')
-    elif request.method == "GET":
-
+        stag = request.POST['selected_tag']
+        stories = Story.objects.filter(category=stag)
         context = {
-            'all_comments' : all_comments,
-            'user' : user,
-            'user_comments' : user_comments
+            'stories': stories,
+            'tags': tags,
         }
-        return render(request, 'add_comment.html', context)
+        print(stories)
+        return render(request, 'news_tags.html', context)
+    elif request.method == "GET":
+        stories = Story.objects.all().order_by('-Datetime')
+        context = {
+            'tags' : tags,
+            'stories' : stories,
+        }
+        return render(request, 'news_tags.html', context)

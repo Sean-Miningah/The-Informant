@@ -139,7 +139,7 @@ class NationScrapper(Scrapper):
         pd_stories = []
         i = 0
 
-        #loop return a  tuple of stories from nation stored in lists
+        #loop return a  tuple of stories from nation stored in listspyt
         for res_story_title in res_story_titles:
             pd_story = [res_story_title, story_link[i], story_img[i], story_tag[i]]
             pd_stories.extend([pd_story])
